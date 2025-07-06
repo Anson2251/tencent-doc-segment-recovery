@@ -13,9 +13,15 @@ This toolkit enables recovery of PDF documents from Tencent Doc by:
 
 *Note: This tool is designed for downloading documents you have access to view but lack download permissions for.*
 
-## Why I made this?
+## Disclaimer
 
-Because I want to download the file that I don't have the permission to download.
+> [!CAUTION]
+> This tool is provided for educational and research purposes only. Users are responsible for ensuring they have proper authorisation to access and download any documents.
+>
+> - The tool should only be used on documents you have legitimate access to view
+> - Respect all copyright laws and terms of service
+> - The authors assume no liability for misuse of this tool
+> - No warranty is provided, use at your own risk
 
 ## Prerequisites
 
@@ -50,14 +56,14 @@ Because I want to download the file that I don't have the permission to download
 
 ## Workflow Steps
 
+> [!NOTE]
+> If the file is relatively small (likely < 1 MiB), Tencent Doc will not split the document into multiple segments. In this case, you can download that PDF file directly in developer tools and skip all steps in the workflow below.
+
 ### 0. Collect All the Segments
 
 1. Open Tencent Doc in browser
 2. Refresh the page
 3. Scroll the document down to the end slowly to ensure all segments are loaded
-
-> [!NOTE]
-> If the file is relatively small (likely < 1 MiB), Tencent Doc will not split the document into multiple segments. In this case, you can download that PDF file and skip all steps in the workflow below.
 
 > [!IMPORTANT]
 > Ensure all segments are loaded before saving the HAR file. If not, repeat the steps.
@@ -68,7 +74,7 @@ Because I want to download the file that I don't have the permission to download
 
 2. Save as HAR file
 
-> [!TIP] 
+> [!TIP]
 > Sometimes by using the url to filter `https://docs.qq.com/api/pdf-loader/load`
 
 ### 2. Convert HAR to PDF Segments
