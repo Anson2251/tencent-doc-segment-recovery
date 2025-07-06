@@ -11,7 +11,7 @@ This toolkit enables recovery of PDF documents from Tencent Doc by:
 3. Reordering segments correctly
 4. Merging into a final PDF
 
-*Note: This tool is designed for recovering documents you have access to view but lack download permissions for.*
+*Note: This tool is designed for downloading documents you have access to view but lack download permissions for.*
 
 ## Why I made this?
 
@@ -33,22 +33,19 @@ Because I want to download the file that I don't have the permission to download
 ### `pdf_obj_num_range.py`
 
 - Extracts PDF object ID ranges from segments
-- Outputs CSV with filename, first_obj_num, last_obj_num
-- Handles binary PDFs and cleans non-ASCII characters
+- Outputs CSV with `filename, first_obj_num, last_obj_num`
 - **Usage**: `python pdf_obj_num_range.py > ranges.csv`
 
 ### `batch_rename.py`
 
 - Renames files according to CSV mapping
 - CSV format: `original_name,new_name`
-- Gracefully handles missing files
 - **Usage**: `python batch_rename.py rename_table.csv`
 
 ### `merge.sh`
 
 - Concatenates sorted PDF segments
 - Outputs to `merged.pdf`
-- Numerically sorts files by name (sorted1.pdf, sorted2.pdf)
 - **Usage**: `./merge.sh`
 
 ## Workflow Steps
@@ -68,9 +65,11 @@ Because I want to download the file that I don't have the permission to download
 ### 1. Extract PDF Segments
 
 1. Filter network requests for PDF segments by developer tools (in network panel)
-    > [!TIP] Sometimes by using the url to filter `https://docs.qq.com/api/pdf-loader/load`
 
 2. Save as HAR file
+
+> [!TIP] 
+> Sometimes by using the url to filter `https://docs.qq.com/api/pdf-loader/load`
 
 ### 2. Convert HAR to PDF Segments
 
@@ -138,3 +137,7 @@ Outputs: merged.pdf
 ## Credits
 
 HAR Extractor is modified from [HAR Extractor](https://github.com/JC3/harextract), licenced under GPL-3.0.
+
+---
+
+Last update: 2025-07-06
