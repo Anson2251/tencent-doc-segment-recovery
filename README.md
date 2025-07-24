@@ -11,7 +11,7 @@ This toolkit enables recovery of PDF documents from Tencent Doc by:
 3. Reordering segments correctly
 4. Merging into a final PDF
 
-*Note: This tool is designed for downloading documents you have access to view but lack download permissions for.*
+*Note: This tool is designed for downloading documents you have access to view but too lazy to download.*
 
 ## Disclaimer
 
